@@ -4,5 +4,21 @@
       "folder": "arijit_singh",
       "title": "Arijit Singh",
       "description": "Best hits of Arijit Singh"
-    }]
+    },
+    {
+      "folder": "param_sundari",
+      "title": "Param Sundari",
+      "description": "Dance and Bollywood vibes"
+    },
+    {
+      "folder": "rahat_fateh_ali_khan",
+      "title": "Rahat Fateh Ali Khan",
+      "description": "Soulful and classical hits"
+    },
+    {
+      "folder": "yaariyan",
+      "title": "Yaariyan",
+      "description": "Friendship and youth songs"
+    }
+  ]
 }
