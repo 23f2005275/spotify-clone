@@ -1,4 +1,10 @@
 {
-    "title": "Rahat Fateh",
-    "description": "love songs!"
+  "title": "Rahat Fateh Ali",
+  "description": "Soulful tracks by Rahat Fateh Ali Khan",
+  "songs": [
+    "Aafreen Reprise Azaan 128 Kbps.mp3",
+    "Aaj Din Chadheya Love Aaj Kal 128 Kbps.mp3",
+    "Aye Khuda Rocky Handsome 128 Kbps.mp3",
+    "Bichdann Son Of Sardaar 128 Kbps.mp3"
+  ]
 }
