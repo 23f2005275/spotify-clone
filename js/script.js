@@ -30,13 +30,13 @@ async function getSongs(folder) {
     for (const song of songs) {
         songUL.innerHTML += `
         <li>
-            <img class="invert" src="musical-note-svgrepo-com.svg" alt="">
+            <img class="invert" src="img/musical-note-svgrepo-com.svg" alt="">
             <div class="info">
                 <div>${song}</div>
                 <div></div>
             </div>
             <div class="playnow">
-                <img class="invert" src="play-svgrepo-com.svg" alt="">
+                <img class="invert" src="img/play-svgrepo-com.svg" alt="">
                 <span>Play Now</span>
             </div>              
         </li>`;
@@ -58,7 +58,7 @@ const playMusic=(track,pause=false)=>{
     currentSong.src=`/${currFolder}/`+track;
     if (!pause){
         currentSong.play()
-        play.src='pause-svgrepo-com.svg'
+        play.src='img/pause-svgrepo-com.svg'
     }
     document.querySelector('.songinfo').innerHTML=decodeURI(track);
     document.querySelector('.songtime').innerHTML='00:00/00:00';
@@ -89,7 +89,7 @@ async function displayAlbums() {
                                 </svg>
 
                             </div>
-                            <img src="/songs/${folder}/cover.jpeg" alt="image">
+                            <img src="img/img//songs/${folder}/cover.jpeg" alt="image">
                             <h2>${response.title}</h2>
                             <p>${response.description}</p>
                         </div>`
