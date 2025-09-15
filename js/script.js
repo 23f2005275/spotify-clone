@@ -19,48 +19,38 @@ function secondsToMinutes(seconds) {
 }
 
 async function getSongs(folder) {
-    currFolder=folder;
-    let a = await fetch(`/${folder}/`);
-    let response= await a.text();
-    let div = document.createElement("div");
-    div.innerHTML= response;
-    let as = div.getElementsByTagName("a")
-    songs= []
-    for (let index = 0; index< as.length; index++) {
-        const element = as[index];
-        if (element.href.endsWith('.mp3')){
-            songs.push(element.href.split(`%5C`)[3])
-            // console.log(element.href.split('%5C')[3])
-            // console.log(songs)
+    currFolder = folder;
+    let res = await fetch(`/${folder}/info.json`);
+    let data = await res.json();
+    songs = data.songs;
 
-        }
-        
-    }
-    let songUL=document.querySelector('.songlist').getElementsByTagName('ul')[0];
-    songUL.innerHTML=''
+    let songUL = document.querySelector('.songlist ul');
+    songUL.innerHTML = "";
 
     for (const song of songs) {
-        songUL.innerHTML=songUL.innerHTML + 
-        `<li>
+        songUL.innerHTML += `
+        <li>
             <img class="invert" src="musical-note-svgrepo-com.svg" alt="">
-                <div class="info">
-                    <div>${song.replaceAll('%20', ' ')}</div>
-                    <div></div>
-                </div>
-                <div class="playnow">
-                    <img class="invert" src="play-svgrepo-com.svg" alt="">
-                    <span>Play Now</span>
-                </div>              
-        </li>`
+            <div class="info">
+                <div>${song}</div>
+                <div></div>
+            </div>
+            <div class="playnow">
+                <img class="invert" src="play-svgrepo-com.svg" alt="">
+                <span>Play Now</span>
+            </div>              
+        </li>`;
     }
-    Array.from(document.querySelector('.songlist').getElementsByTagName('li')).forEach(e=>{
-        e.addEventListener('click',element=>{
-            // console.log(e.querySelector('.info').firstElementChild.innerHTML)
-            playMusic(e.querySelector('.info').firstElementChild.innerHTML)
-        })
-    }) 
+
+    Array.from(songUL.getElementsByTagName('li')).forEach(e => {
+        e.addEventListener('click', el => {
+            playMusic(e.querySelector('.info').firstElementChild.innerHTML);
+        });
+    });
+
     return songs;
 }
+    
 
 const playMusic=(track,pause=false)=>{
     // let audio= new Audio('/songs/'+track)
@@ -117,7 +107,7 @@ async function displayAlbums() {
 }
 
 async function main(){
-    await getSongs('songs/arijit_singh');
+    await getSongs('songs');
     playMusic(songs[0],true)
 
     displayAlbums()
