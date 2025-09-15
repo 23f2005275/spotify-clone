@@ -55,7 +55,11 @@ async function getSongs(folder) {
 const playMusic=(track,pause=false)=>{
     // let audio= new Audio('/songs/'+track)
     // audio.play()
-    currentSong.src=`/${currFolder}/`+track;
+    if (!track) {
+        console.error("No track provided to playMusic");
+        return;
+    }
+    currentSong.src=`songs/${currFolder}/`+track;
     if (!pause){
         currentSong.play()
         play.src='img/pause-svgrepo-com.svg'
