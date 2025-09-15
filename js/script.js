@@ -137,29 +137,22 @@ async function main(){
         document.querySelector('.left').style.left='-100%'
     })
     
-    previous.addEventListener('click',()=>{
-    
-        let index=songs.indexOf(currentSong.src.split('/').slice(-1) [0])
-        // console.log(index);
-        
-        
-        if ((index-1 ) >= 0){
-            playMusic(songs[index-1])
+    previous.addEventListener('click', () => {
+    let current = decodeURI(currentSong.src.split('/').pop());
+    let index = songs.indexOf(current);
+    if (index > 0) {
+        playMusic(songs[index - 1]);
         }
-    })
-    next.addEventListener('click',()=>{
-
-        let index=songs.indexOf(currentSong.src.split('/').slice(-1) [0])
-        let length = songs.length
-        // console.log(index);
-        
-
-        if ((index+1 )<length){
-            playMusic(songs[index+1])
-            
-        }
-    })
+    });
     
+    next.addEventListener('click', () => {
+        let current = decodeURI(currentSong.src.split('/').pop());
+        let index = songs.indexOf(current);
+        if (index < songs.length - 1) {
+            playMusic(songs[index + 1]);
+        }
+    });
+
     document.querySelector('.range').getElementsByTagName('input')[0].addEventListener('change',(e)=>{
         // console.log(e.target.value);
         currentSong.volume= e.target.value/100
