@@ -1,4 +1,11 @@
 {
-    "title": "Yaariyan 2013",
-    "description": "Popular songs of Yaariyan movie!"
+  "title": "Yaariyan 2013",
+  "description": "Top tracks from the movie Yaariyan",
+  "songs": [
+    "Abcd Yaariyan Pritam 128 Kbps.mp3",
+    "Allah Waariyan Yaariyan 128 Kbps.mp3",
+    "Baarish Yaariyan Mohammed Irfan 128 Kbps.mp3",
+    "Love Me Thoda Aur Yaariyan 128 Kbps.mp3",
+    "Sunny Sunny Yaariyan 128 Kbps.mp3"
+  ]
 }
