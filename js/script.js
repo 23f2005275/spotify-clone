@@ -102,10 +102,8 @@ async function displayAlbums() {
 
 
 async function main(){
-    await getSongs('songs/arijit_singh');
-    playMusic(songs[0],true)
-
-    displayAlbums()
+    // Don’t auto-load any playlist, just show albums
+    await displayAlbums();
       
     play.addEventListener('click',()=>{
         if (currentSong.paused){
