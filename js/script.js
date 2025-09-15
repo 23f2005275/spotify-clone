@@ -100,7 +100,11 @@ async function displayAlbums() {
             let folder = e.currentTarget.dataset.folder;
             console.log("Clicked folder:", folder); // debug
             songs = await getSongs(folder);
+            if (songs.length > 0) {
             playMusic(songs[0]);
+            } else {
+                console.warn("No songs found in folder:", folder);
+            }
         });
     });
 }
