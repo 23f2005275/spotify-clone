@@ -22,7 +22,7 @@ async function getSongs(folder) {
     currFolder = folder;
     let res = await fetch(`/${folder}/info.json`);
     let data = await res.json();
-    songs = data.songs;
+    songs = data.songs || [];
 
     let songUL = document.querySelector('.songlist ul');
     songUL.innerHTML = "";
@@ -94,7 +94,8 @@ async function displayAlbums() {
     Array.from(document.getElementsByClassName('card')).forEach(card => {
         card.addEventListener("click", async e => {
             let folder = e.currentTarget.dataset.folder;
-            songs = await getSongs(`songs/${folder}`);
+            console.log("Clicked folder:", folder); // debug
+            songs = await getSongs(folder);
             playMusic(songs[0]);
         });
     });
@@ -108,11 +109,11 @@ async function main(){
     play.addEventListener('click',()=>{
         if (currentSong.paused){
             currentSong.play()
-            play.src='pause-svgrepo-com.svg'
+            play.src='img/pause-svgrepo-com.svg'
         }
         else{
             currentSong.pause()
-            play.src='play-svgrepo-com.svg'
+            play.src='img/play-svgrepo-com.svg'
         }
     })
     currentSong.addEventListener('timeupdate',()=>{
