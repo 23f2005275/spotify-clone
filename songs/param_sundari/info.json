@@ -1,4 +1,11 @@
 {
-    "title": "Param Sundari ",
-    "description": "Movie songs!"
+  "title": "Param Sundari Collection",
+  "description": "A curated playlist featuring Param Sundari-themed tracks",
+  "songs": [
+    "Bheegi Saree Param Sundari 128 Kbps.mp3",
+    "Chand Kagaz Ka Param Sundari 128 Kbps.mp3",
+    "Pardesiya Param Sundari 128 Kbps.mp3",
+    "Sundari Ke Pyar Mein Param Sundari 128 Kbps.mp3",
+    "Sunn Mere Yaar Ve Param Sundari 128 Kbps.mp3"
+  ]
 }
